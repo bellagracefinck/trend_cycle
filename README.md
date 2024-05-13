@@ -3,7 +3,7 @@
 
 ## Abstract
 
-The field of fashion trend forecasting has existed for decades, but recent strides in natural language processing and AI have opened countless doors for opportunities to fortify the primarily qualitative work done by forecasting agencies and consumers alike. Through a thorough analysis of Vogue Runway's online archive of Ready-to-Wear collections from the past 34 years, this project aims to investigate one primary question: 
+The field of fashion trend forecasting has existed for decades, but recent strides in natural language processing and AI have created countless opportunities to fortify the work done by forecasting agencies and consumers alike. Through a thorough analysis of Vogue Runway's online archive of Ready-to-Wear collections from the past 34 years, this project aims to investigate one question in particular: 
 
 **How successful are natural language processing efforts at recognizing the trend cycle in action, identifying the characteristics of fashion designers who achieve long-term success, and using the two to predict trends and designer brand longevity alike?**
 
