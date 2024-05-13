@@ -80,11 +80,12 @@ I stored the cluster label output for each run, then turned the output into a fr
 This frequency matrix is then converted into a network adjacency matrix, in which the values in each cell become the weight of the link between the two collection nodes. With a manual threshold in place, collections only form a link if they were in the same cluster more than 30% of the time in order to limit noise. We then apply a Louvain community detection algorithm to the network to identify groups of similar collections. These group assignments become the primary informant to evaluating which collections are the most similar. 
 
 **Brand longevity analysis**
-As for the evaluation of brand longevity, I created a Recurrent Neural Network to predict the prevalence score of designers based on their collection descriptions. As the prevalence score is a continuous target variable, the RNN required linear loss functions and 
+As for the evaluation of brand longevity, I created a Recurrent Neural Network to predict the prevalence score of designers based on their collection descriptions. As the raw prevalence score is a continuous target variable, I utilized the class assignments (based on percentiles) as the model target to allow for classification. Were I to have more time or data, I'd be interested in doing a regression on designer metadata in order to predict prevalence. 
 
 
 ## Results
 This section presents the findings of the research, including descriptive statistics, tables, and graphs. It should provide a clear and concise summary of the main results, highlighting any patterns or trends observed. [NOTE: 2-4 paragraphs]
+
 
 
 
