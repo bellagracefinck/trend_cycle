@@ -8,6 +8,7 @@ The field of fashion trend forecasting has existed for decades, but recent strid
 
 **How successful are natural language processing efforts at recognizing the trend cycle in action, identifying the characteristics of fashion designers who achieve long-term success, and using the two to predict trends and designer brand longevity alike?**
 
+The project enlists a multifaceted approach involving Named Entity Recognition, network analysis, clustering algorithms, and classification models in order to explore the interplay between language and longevity in the world of high fashion. Results of these analyses reveal patterns of newer designers creating collections inspired by others, more established/prevalent designers utilizing timeless design characteristics rather than bold or unique ones, and the evolution of fashion trends over time. Tangentially, we analyze the structure of fashion news coverage over time, noting a particular increase in style descriptions in the 2020s with the rise of "aesthetic" culture and self-categorization. 
 
 
 ## Introduction
