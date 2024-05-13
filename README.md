@@ -90,7 +90,7 @@ In order to better understand which features of a collection contribute the most
 This section presents the findings of the research, including descriptive statistics, tables, and graphs. It should provide a clear and concise summary of the main results, highlighting any patterns or trends observed. [NOTE: 2-4 paragraphs]
 
 ### Exploratory Data Analysis
-
+In the initial exploration of the data, we notice several things. 
 
 
 
