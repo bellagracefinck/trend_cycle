@@ -6,7 +6,7 @@ Abstract: This section provides a brief summary of the project, highlighting the
 
 The field of fashion trend forecasting has existed for decades, but recent strides in natural language processing and AI have opened countless doors for opportunities to fortify the primarily qualitative work done by forecasting agencies and consumers alike. Through a thorough analysis of Vogue Runway's archive of Ready-to-Wear collections from the past 34 years, this project aims to answer one question: 
 
->How successful are natural language processing efforts at recognizing the trend cycle in action, identifying the characteristics of fashion designers who achieve long-term success, and using the two to predicting trends and deisgner longevity alike?
+>How successful are natural language processing efforts at recognizing the trend cycle in action, identifying the characteristics of fashion designers who achieve long-term success, and using the two to predict trends and deisgner longevity alike?
 
 
 
@@ -30,7 +30,6 @@ This section provides a comprehensive review of the relevant literature on the t
 - This work provides additional contextualization 
 
 ## Methodology/Dataset
-This section explains the research design, including the data sources, data collection methods, and analysis techniques used. It also discusses any assumptions made and the rationale behind the chosen methods. [NOTE: 2-4 paragraphs]
 
 #### Data collection
 Data was scraped from the Vogue Runway archive using BeautifulSoup (see data_generation notebook). Although it originated as a print-only publication, Vogue has gradually shifted to include their articles and images in a digital format on their website. They have also begun to digitize collections from before the establishment of their digital presence, dating back to Fall 1988. My dataset is made up of every ready-to-wear collection in the archive since Spring 1990 and through Fall 2023. I have saved the raw article text for each of these collections along with the respective season, year, and designer in my complete.csv file.  
@@ -80,13 +79,17 @@ I stored the cluster label output for each run, then turned the output into a fr
 This frequency matrix is then converted into a network adjacency matrix, in which the values in each cell become the weight of the link between the two collection nodes. With a manual threshold in place, collections only form a link if they were in the same cluster more than 30% of the time in order to limit noise. We then apply a Louvain community detection algorithm to the network to identify groups of similar collections. These group assignments become the primary informant to evaluating which collections are the most similar. 
 
 **Brand longevity analysis**
-As for the evaluation of brand longevity, I created a Recurrent Neural Network to predict the prevalence score of designers based on their collection descriptions. As the raw prevalence score is a continuous target variable, I utilized the class assignments (based on percentiles) as the model target to allow for classification. Were I to have more time or data, I'd be interested in doing a regression on designer metadata in order to predict prevalence. 
+As for the evaluation of brand longevity, I created a Recurrent Neural Network to predict the prevalence score of designers based on their collection descriptions. As the raw prevalence score is a continuous target variable, I utilized the class assignments (based on percentiles) to allow for classification. However, rather than using the class assignments themselves, I opted to turn the problem into a binary classification (1 for high (95th percentile or above) prevalence, 0 for low prevalence). This was due in part to the fact that the prevalence score is not normally distributed, so there are significantly more observations associated with certain levels of prevalence than with others, so even though the classes are based on percentiles the percentiles have very limited differences. 
+
+Were I to have more time or data, I'd be interested in doing a regression on designer metadata in order to predict prevalence. 
+
+In order to better understand which features of a collection contribute the most to designer prevalence, I created a Naive Bayes model and fit it on just the descriptors (fashion related terms extracted from the description), then tracked the model coefficients to see which words specifically had the biggest impact. 
 
 
 ## Results
 This section presents the findings of the research, including descriptive statistics, tables, and graphs. It should provide a clear and concise summary of the main results, highlighting any patterns or trends observed. [NOTE: 2-4 paragraphs]
 
-
+#### Exploratory Data Analysis
 
 
 
