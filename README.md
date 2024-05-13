@@ -6,7 +6,8 @@ Abstract: This section provides a brief summary of the project, highlighting the
 
 The field of fashion trend forecasting has existed for decades, but recent strides in natural language processing and AI have opened countless doors for opportunities to fortify the primarily qualitative work done by forecasting agencies and consumers alike. Through a thorough analysis of Vogue Runway's archive of Ready-to-Wear collections from the past 34 years, this project aims to investigate one primary question: 
 
-**How successful are natural language processing efforts at recognizing the trend cycle in action, identifying the characteristics of fashion designers who achieve long-term success, and using the two to predict trends and deisgner longevity alike?**
+**How successful are natural language processing efforts at recognizing the trend cycle in action, identifying the characteristics of fashion designers who achieve long-term success, and using the two to predict trends and designer longevity alike?**
+
 
 
 ## Introduction
@@ -140,10 +141,10 @@ We fit an RNN model to the data to predict whether the collection designer is pa
 
 ![RNN History](https://github.com/bellagracefinck/trend_cycle/blob/main/images/rnn_history.png)
 
-As shown above, the validation accuracy hangs around the 0.7335 mark before decreasing slightly, while the training accuracy increases over time. Though the model becomes more overfit with each epoch, the validation accuracy does not decrease, which is a positive. 
+As shown above, the validation accuracy hangs around the 0.7335 mark before decreasing slightly, while the training accuracy increases rapidly in the first epoch and then very gradually over time. Though the model becomes slightly overfit by the end, the validation accuracy and training accuracy are within 0.05 of each other, which is a good sign. Additionally, loss is almost entirely minimized for both training and validation sets. 
 
 #### NB
-The Naive Bayes model in this context is aimed at a slightly different goal. Rather than trying to predict designer status with the entire description of the collection, the NB model is trained exclusively on the fashion-related words extracted by the NER model to try and identify specific collection attributes that contribute to or detract from the long term success of designers. 
+The purpose of the Naive Bayes model in this context is aimed at a slightly different goal but trained on the same data. Rather than trying to predict designer status, the NB model is trained on the fashion-related words extracted by the NER model to try and identify specific collection attributes that contribute to or detract from the long term success of designers. 
 
 We reach an accuracy score of 0.72 with this model, and identify which words contributed the most to the top designers vs. the normal designers. 
 
@@ -163,7 +164,7 @@ After adding node attributes to the network based on designer name, season-year,
 For curiosity's sake, I performed TF-IDF analysis on the collection descriptions of  four sample communities identified by the greedy modularity community detection algorithm. While not entirely different, there are certain elements of each community that seem to characterize the vibe of collections included in the community itself. For example, in Sample 3, the inclusion of simple, lightweight fabrics such as gauze and linen fall in line with the general style of minimalism and sustainability. Comparatively, Sample 2's mentions of country, western, and lace seem to evoke a similar sense of cohesion. Were this a clothing classification dataset, the juxtaposition of country and punk in this output may have sparked more cause for concern, but given the extremely imaginative nature of designer fashion, it is likely that the terms are closer in nature than we would otherwise assume. 
 
 ### Designer prevalence prediction
-The Recurrent Neural Network 
+I initially trained the RNN on the full collection descriptions and attempted to predict whether or not the designer of a collection was part of the top 5% of designers by prevalence score. The model took a long time to fit and often ended up being overfit to the training data regardless of how I tuned the hyperparameters. I  eventually decided to switch the training data to the extracted fashion-specific terms from each collection and was quite pleased with the results. The model was faster, minimized both training and validation loss, and ended with a balanced accuracy score between training and validation sets. 
 
 
 ## Conclusion
