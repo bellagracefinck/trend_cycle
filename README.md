@@ -8,8 +8,7 @@ Abstract: This section provides a brief summary of the project, highlighting the
 ## Introduction
 One of my favorite movie monologues of all time is by Meryl Streep (as fictional fashion magazine editor Miranda Priestly) in the 2006 cult classic The Devil Wears Prada. After a poorly timed joke by her extremely ill-equipped assistant, Streep famously exposes the trend cycle as we know it today while simultaneously decimating Anne Hathaway and shining a light on the true power of the fashion industry leaders in the process. (https://www.youtube.com/watch?v=vL-KQij0I8I)
        
-> “You… go to your closet, and you select… I don’t know, that lumpy blue sweater, for instance, because you’re trying to tell the world that you take yourself too seriously to care about what you put on your back, but what you don’t know is that that sweater is not just blue, it’s not turquoise, it’s not lapis, it’s actually cerulean. You’re also blithely unaware of the fact that, in 2002, Oscar de la Renta did a collection of cerulean gowns, and then I think it was Yves Saint Laurent, wasn’t it?… who showed cerulean military jackets. […] And then cerulean quickly showed up in the collections of eight different designers. Then it filtered down through the department stores and then trickled on down into some tragic casual corner where you, no doubt, fished it out of some clearance bin. However, that blue represents millions of dollars of countless jobs, and it’s sort of comical how you think that you’ve made a choice that exempts you from the fashion industry when, in fact, you’re wearing a sweater that was selected for you by the people in this room… from a pile of ‘stuff.’”
-    - *The Devil Wears Prada*, 2006
+> “You… go to your closet, and you select… I don’t know, that lumpy blue sweater, for instance, because you’re trying to tell the world that you take yourself too seriously to care about what you put on your back, but what you don’t know is that that sweater is not just blue, it’s not turquoise, it’s not lapis, it’s actually cerulean. You’re also blithely unaware of the fact that, in 2002, Oscar de la Renta did a collection of cerulean gowns, and then I think it was Yves Saint Laurent, wasn’t it?… who showed cerulean military jackets. […] And then cerulean quickly showed up in the collections of eight different designers. Then it filtered down through the department stores and then trickled on down into some tragic casual corner where you, no doubt, fished it out of some clearance bin. However, that blue represents millions of dollars of countless jobs, and it’s sort of comical how you think that you’ve made a choice that exempts you from the fashion industry when, in fact, you’re wearing a sweater that was selected for you by the people in this room… from a pile of ‘stuff.’” - *The Devil Wears Prada*, 2006
         
 Even as I read the words for the hundredth time, I can feel the prickling sensation I got the first time I ever watched the film. In a world in which the illusion of choice is everywhere, fashion is often advertised as an escape - an opportunity for one to make choices based exclusively on their own intended self-expression. However, just like most things in our society, the vast majority of decisions we make have already been made for us by a group of highly influential elites. 
 
@@ -27,6 +26,29 @@ This section provides a comprehensive review of the relevant literature on the t
 
 ## Methodology/Dataset
 This section explains the research design, including the data sources, data collection methods, and analysis techniques used. It also discusses any assumptions made and the rationale behind the chosen methods. [NOTE: 2-4 paragraphs]
+
+#### Data collection
+Data was scraped from the Vogue Runway archive using BeautifulSoup (see data_generation notebook). 
+Although it originated as a print-only publication, Vogue has gradually shifted to include their articles and images in a digital format on their website. They have also begun to digitize collections from before the establishment of their digital presence, dating back to Fall 1988. My dataset is made up of every ready-to-wear collection in the archive since Spring 1990 and through Fall 2023. I have saved the raw article text for each of these collections along with the respective season, year, and designer in my complete.csv file.  
+
+It is important to note that while this dataset is large, it is not exhaustive and will remain incomplete until Vogue uploads their entire archive. The data is particularly sparse for the older seasons, but increases in robustness as the years progress. 
+
+#### Metric calculations
+Designers are quantified by two metrics: *consistency* and *prevalence*.  
+
+- *consistency*: The total number of collections made by designer/total # of seasons since the designer’s initial season (inclusive of first season)
+- *prevalence*: An adapted version of the consistency metric that penalizes designers who have few collections. This was put in place for two reasons - 1) to penalize designers with high consistency values as a result of having only been around for a short period of time (ex: a designer whose first collection was in the most recent season has a consistency value of 1.0) and 2) to further penalize designers who have low consistency and few collections. I created the prevalence formula using a **penalty term**, $α$.
+    - α comes in several forms, listed here in order from least to most severe:
+        1. $α = \frac{1}{collections^2}$
+        2. $α = \frac{1}{collections}$
+        3. $α = \frac{1}{\sqrt{collections}}$
+        4. $α = \frac{1}{\sqrt[3]{collections}}$
+    - This helps to ensure that designers who have only been in the most recent season (consistency = 1) are not weighted equally with designers who have high consistency values after having been around for many years
+
+In my final analysis, I used the third form of $α$, $α = \frac{1}{\sqrt{collections}}$, as it penalized the brand new designers with high consistency values without limiting high prevalence values to exclusively the oldest, most established designers. 
+
+The metric is then calculated as $prevalence = consistency - \frac{1}{\sqrt{collections}}$.
+
 
 ## Results
 This section presents the findings of the research, including descriptive statistics, tables, and graphs. It should provide a clear and concise summary of the main results, highlighting any patterns or trends observed. [NOTE: 2-4 paragraphs]
