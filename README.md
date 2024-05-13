@@ -122,7 +122,7 @@ In order to check on the usefulness of the data, I created two supervised learni
 ![Frequency matrix](https://github.com/bellagracefinck/trend_cycle/blob/main/images/freq.png)
 Here is the frequency/adjacency matrix used to create the network graph. The index and column titles are the id numbers of the collections, which later become the names of the nodes. The value in each cell represents the number of times the nodes at the index and column title were in the same cluster (ex: collections 7120 and 3821 were clustered together 30 times out of 50 runs).
 
-![Network](https://github.com/bellagracefinck/trend_cycle/blob/main/images/graph.png)
+![Network](https://github.com/bellagracefinck/trend_cycle/blob/main/images/graph2.png)
 After visualizing the network in Gephi, we can see there are clear groups of designer collections that were clustered together frequently across the runs. 
 
 ### Prediction of designer status with Recurrent Neural Network and Naive Bayes models
