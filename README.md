@@ -93,7 +93,7 @@ This section presents the findings of the research, including descriptive statis
 The initial exploration of the data provided excellent context for the makeup data itself, as well as several aspects that validate our assumptions. 
 
 ![Wordcloud](https://github.com/bellagracefinck/trend_cycle/blob/main/images/wc.png)
-Albeit not the most effective visualization, word clouds help communicate the "main idea" of a dataset and demystify the type of language we are seeing in the archival reviews. Despite the NLP jargon present in this report, the vocabulary of the dataset is not particularly complex or advanced, which is helpful when lemmatizing words.  
+Albeit not the most effective visualizations, word clouds help communicate the "main idea" of a dataset and demystify the type of language we are seeing in the archival reviews. Despite the NLP jargon present in this report, the vocabulary of the dataset is not particularly complex or advanced, which is helpful when lemmatizing words. (Note: All words in the visualizations have been lemmatized, or shortened to their root, so words like "create" and "created" are shortened to "creat." This hopefully explains some of the bizarre spellings you see here and in later tables.
 
 ![Figure 1](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-1.png)
 In figure 1, it becomes clear that the majority of our data is coming from the past 15 years. There is an additional dip in 2020 as a result of the COVID-19 pandemic slowing down in-person seasons, but the number of collections appears to be back on the incline post-pandemic. 
