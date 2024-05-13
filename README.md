@@ -90,9 +90,15 @@ In order to better understand which features of a collection contribute the most
 This section presents the findings of the research, including descriptive statistics, tables, and graphs. It should provide a clear and concise summary of the main results, highlighting any patterns or trends observed. [NOTE: 2-4 paragraphs]
 
 ### Exploratory Data Analysis
-In the initial exploration of the data, we notice several things. 
+The initial exploration of the data provided excellent context for the makeup data itself, as well as several aspects that validate our later experimentation. 
 
+![Figure 1](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-1.png)
 
+![Figure 2](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-2.png)
+
+![Figure 3](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-3.png)
+
+![Figure 4](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-4.png)
 
 ## Discussion
 The discussion section interprets the results of the study in light of the research question and literature review. It should explain how the findings relate to previous research and provide a critical analysis of their implications. [NOTE: 6-10 paragraphs]
