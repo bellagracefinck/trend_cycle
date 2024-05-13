@@ -110,11 +110,13 @@ Figure 3 shows the distribution of review lengths, with a slight right skewed bu
 ![Figure 4](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-4.png)
 Figure 4 is an example of the temporal nature of fashion trends. As tweed, a material more commonly associated with formal, often office-related attire, decreases in popularity, silk and lace, materials frequently associated with more romantic or delicate pieces, rise. This is just one example, but the code to recreate this plot with any words of your choosing is available in the EDA notebook. 
 
+### TF-IDF analysis
+![Term frequency by years](https://github.com/bellagracefinck/trend_cycle/blob/main/images/term_freq.png)
+Each column in this table is made up of the words with the top ten highest normalized tf-idf scores from the time. 
 
 ### Classifying collection seasons with Naive Bayes and Support Vector Classifier models
 In order to check on the usefulness of the data, I created two supervised learning models to predict the season of different designer collections based on the processed descriptions. The Naive Bayes model was able to achieve a validation accuracy of 0.8311 while the SVC model achieved a validation accuracy of 0.8727. Given the content of the dataset itself, the fact that models were successfully labelling seasons at these accuracy rates is not exactly surprising, but it was helpful for me to validate the usability of the data in a machine learning context.
 
-###
 
 
 ## Discussion
