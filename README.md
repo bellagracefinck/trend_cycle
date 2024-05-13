@@ -129,7 +129,8 @@ Here is the frequency/adjacency matrix used to create the network graph. The ind
 ![Network](https://github.com/bellagracefinck/trend_cycle/blob/main/images/graph2.png)
 After visualizing the network in Gephi, we can see there are clear groups of designer collections that were clustered together frequently across the runs. Nodes are sized by their weighted degree (the sum of all edge weights connected to that node) and colored in reverse rainbow order by their seasonyear value (1990.0 to 2023.1 goes from blue --> green --> yellow --> orange --> red --> purple). The edge thickness and color both correspond to the weight. 
 
-![Sample 1](https://github.com/bellagracefinck/trend_cycle/blob/main/images/samp1.png)![Sample 2](https://github.com/bellagracefinck/trend_cycle/blob/main/images/samp2.png)![Sample 3](https://github.com/bellagracefinck/trend_cycle/blob/main/images/samp3.png "title-1"=20%x)![Sample 4](https://github.com/bellagracefinck/trend_cycle/blob/main/images/samp4.png)
+![Sample 1](https://github.com/bellagracefinck/trend_cycle/blob/main/images/samp1.png)![Sample 2](https://github.com/bellagracefinck/trend_cycle/blob/main/images/samp2.png)
+![Sample 3](https://github.com/bellagracefinck/trend_cycle/blob/main/images/samp3.png)![Sample 4](https://github.com/bellagracefinck/trend_cycle/blob/main/images/samp4.png)
 Here are three example outputs of the most significant words in each cluster (measured by normalized tfidf). 
 
 ### Prediction of designer status with Recurrent Neural Network and Naive Bayes models
