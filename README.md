@@ -1,4 +1,4 @@
-## The Devil Wears Prada, I Wear Whatever's on Sale: NLP Applications in Fashion Trend Forecasting and Brand Longevity Analysis
+## The Devil Wears Prada, I Wear Whatever's on Clearance: NLP Applications in Fashion Trend Forecasting and Brand Longevity Analysis
 ### Bella Grace Finck, DATA 340
 
 ## Abstract
@@ -35,6 +35,8 @@ Given the aims of my project, I opted to use Ready to Wear collections rather th
 Collection descriptions are located in the *collections* dataframe, which consists of the columns 'season', 'year', 'seasonyear', 'designer', 'text', 'id', and 'preprocessed_sentences' and is eventually mapped to include 'consistency', 'prevalence', and 'class'.
 
 Designer-specific information is contained in the *designers* dataframe, which consists of 'designer', 'collections' (total number of designer's collections), and 'first_season', 'consistency', 'prevalence', and 'class'. 
+
+In the preprocessing portion of my feature engineering, I implemented the StanfordNER model that identifies people's names in text. This was a necessity given how common it is for collection reviews to include the names of creative directors (which more often than not identify the designer) and models (which inadvertently date the collection). In order to ensure that the dataset was gleaned of any blatantly identifying characteristics, I removed all names and designer names from the collection descriptions in the preprocessing function. 
 
 #### Metric calculations
 Designers are quantified by two metrics: *consistency* and *prevalence*.  
