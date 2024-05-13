@@ -4,9 +4,9 @@
 ## Abstract
 Abstract: This section provides a brief summary of the project, highlighting the main research question, methodology, results, and conclusions. It should be concise and clear, usually limited to 250-300 words.
 
-The field of fashion trend forecasting has existed for decades, but recent strides in natural language processing and AI have opened countless doors for opportunities to fortify the primarily qualitative work done by forecasting agencies and consumers alike. Through a thorough analysis of Vogue Runway's archive of Ready-to-Wear collections from the past 34 years, this project aims to investigate one primary question: 
+The field of fashion trend forecasting has existed for decades, but recent strides in natural language processing and AI have opened countless doors for opportunities to fortify the primarily qualitative work done by forecasting agencies and consumers alike. Through a thorough analysis of Vogue Runway's online archive of Ready-to-Wear collections from the past 34 years, this project aims to investigate one primary question: 
 
-**How successful are natural language processing efforts at recognizing the trend cycle in action, identifying the characteristics of fashion designers who achieve long-term success, and using the two to predict trends and designer longevity alike?**
+**How successful are natural language processing efforts at recognizing the trend cycle in action, identifying the characteristics of fashion designers who achieve long-term success, and using the two to predict trends and designer brand longevity alike?**
 
 
 
@@ -175,7 +175,11 @@ I was interested to see that the most significant informants of being a top desi
 ## Conclusion
 This section summarizes the main findings of the study, restates the research question, and discusses the implications of the research for future research and practice. [NOTE: 1-2 paragraphs]
 
-One of the primary ideas for future research I'd like to personally expand upon is the idea of training a large language model on the dataset and using it for text generation. I'd like to use an LLM to generate a prediction for what the next collections from top designers will contain. Ideally, this would provide an opportunity to see if the patterns I've recognized in my research lend themselves in any way into the forecasting of trends based on designer class. It would also allow me to experiment with AI-based trend forecasting. 
+
+While my research was somewhat limited in scope by the non-exhaustiveness of my dataset and computational resources available on my laptop, I would be lying if I said I was not pleased with my findings. My network model was able to discover communities of similar collections over time and track the influence of certain collections on those that came after. Through the implementation of my Named Entity Recognition model and creation of NLP classifiers, I was able to discover that the most prevalent designers remain prevalent by refusing to date themselves through participation in flashy trends or attempting to deviate too far from the norm. 
+
+One of the primary ideas for future research I'd personally like to expand upon is the idea of training a large language model on the dataset and using it for text generation. Using an LLM to generate a prediction for what the next collections from top designers will contain would ideally provide an opportunity to see if the patterns I've recognized in my research lend themselves in any way into the forecasting of trends. It would also allow me to experiment with AI-based trend forecasting. I'd additionally like to continually add to my NER training dataset in order to bolster the robustness of model training and incorporate new trends and clothing features as they are invented. 
+
 
 ## References
 This section provides a list of all the sources cited in the paper, following a specific citation style (e.g., APA, MLA).
