@@ -169,9 +169,11 @@ I was interested to see that the most significant informants of being a top desi
 
 ## Conclusion
 
-While my research was somewhat limited in scope by the non-exhaustiveness of my dataset and computational resources available on my laptop, I would be lying if I said I was not pleased with my findings. My network model was able to discover communities of similar collections over time and track the influence of certain collections on those that came after. Through the implementation of my Named Entity Recognition model and creation of NLP classifiers, I was able to discover that the most prevalent designers remain prevalent by refusing to date themselves through participation in flashy trends or attempting to deviate too far from the norm. 
+While my research was somewhat limited in scope by the non-exhaustiveness of my dataset and computational resources available on my laptop, I would be lying if I said I was not pleased with my findings. My network model was able to discover communities of similar collections over time and track the influence of certain collections on those that came after. Through the implementation of my Named Entity Recognition model and creation of NLP classifiers, I was able to discover that the most prevalent designers remain prevalent by refusing to date themselves through participation in flashy trends or attempting to deviate too far from the norm. Rather, they elevate and reimagine the pre-existing standard with high quality craftmanship and materials. 
 
-One of the primary ideas for future research I'd personally like to expand upon is the idea of training a large language model on the dataset and using it for text generation. Using an LLM to generate a prediction for what the next collections from top designers will contain would ideally provide an opportunity to see if the patterns I've recognized in my research lend themselves in any way into the forecasting of trends. It would also allow me to experiment with AI-based trend forecasting. I'd additionally like to continually add to my NER training dataset in order to bolster the robustness of model training and incorporate new trends and clothing features as they are invented. 
+One of the primary ideas for future research I'd personally like to expand upon is the concept of training a large language model on the dataset and using it for text generation. Using an LLM to generate a prediction for what the next collections from top designers will contain would ideally provide an opportunity to see if the patterns I've recognized in my research lend themselves in any way into the forecasting of trends. It would also allow me to experiment with AI-based trend forecasting. I'd additionally like to continually add to my NER training dataset in order to bolster the robustness of model training and incorporate new trends and clothing features as they are invented. 
+
+I suppose above all else, this project has confirmed to me that *The Devil Wears Prada* was more of a prophecy than a film. Trends will come and go, but influence is forever. 
 
 
 ## References
@@ -181,6 +183,8 @@ Bae, H., Cho, S. Y., Yoo, J., & Seok-Bae Yun. (2023). Mathematical modeling of t
 Chapter 3: Processing Pipelines. (n.d.). *Advanced NLP with spaCy*. [Advanced NLP with spaCy](https://course.spacy.io/en/chapter3).
 
 Emerson, S. (2022). Gen z’s imitations of life: Aesthetics, self and Pinterest. *University Wire*. [University Wire](https://www.proquest.com/wire-feeds/gen-z-s-imitations-life-aesthetics-self-pinterest/docview/2623033840/se-2?accountid=15053).
+
+Frankel, D. (2006). The Devil Wears Prada. Fox 2000 Pictures.
 
 Masse, D. (n.d.). Davidmasse/blog-fashion-system: NLP analysis of fashion trends. GitHub. [GitHub](https://github.com/davidmasse/blog-fashion-system/tree/master).
 
