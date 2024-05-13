@@ -1,4 +1,4 @@
-## The Devil wears Prada, I wear whatever is trendy: \n An NLP Application in Fashion Trend Forecasting and Brand Longevity Analysis
+## The Devil Wears Prada, I Wear Whatever is on Sale: An NLP Application in Fashion Trend Forecasting and Brand Longevity Analysis
 ### Bella Grace Finck, DATA 340
 
 ## Abstract
