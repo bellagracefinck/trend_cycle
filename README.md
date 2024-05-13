@@ -174,21 +174,22 @@ One of the primary ideas for future research I'd personally like to expand upon 
 
 ## References
 
-Bae, H., Cho, S. Y., Yoo, J., & Seok-Bae Yun. (2023). Mathematical modeling of trend cycle: Fad, fashion and classic. Unpublished manuscript. Retrieved from ProQuest.
+Bae, H., Cho, S. Y., Yoo, J., & Seok-Bae Yun. (2023). Mathematical modeling of trend cycle: Fad, fashion and classic. [Unpublished manuscript](https://www.proquest.com/working-papers/mathematical-modeling-trend-cycle-fad-fashion/docview/2804142334/se-2?accountid=15053). Retrieved from ProQuest.
 
-Chapter 3: Processing Pipelines. (n.d.). Advanced NLP with spaCy. Advanced NLP with spaCy.
+Chapter 3: Processing Pipelines. (n.d.). *Advanced NLP with spaCy*. [Advanced NLP with spaCy](https://course.spacy.io/en/chapter3).
 
-Emerson, S. (2022). Gen z’s imitations of life: Aesthetics, self and Pinterest. University Wire. University Wire.
+Emerson, S. (2022). Gen z’s imitations of life: Aesthetics, self and Pinterest. *University Wire*. [University Wire](https://www.proquest.com/wire-feeds/gen-z-s-imitations-life-aesthetics-self-pinterest/docview/2623033840/se-2?accountid=15053).
 
-Masse, D. (n.d.). Davidmasse/blog-fashion-system: NLP analysis of fashion trends. GitHub. GitHub.
+Masse, D. (n.d.). Davidmasse/blog-fashion-system: NLP analysis of fashion trends. GitHub. [GitHub](https://github.com/davidmasse/blog-fashion-system/tree/master).
 
-Shi, M., Chussid, C., Yang, P., Jia, M., Van, D. L., & Cao, W. (2021). The exploration of artificial intelligence application in fashion trend forecasting. Textile Research Journal, 91(19-20), 2357-2386. doi:10.1177/00405175211006212.
+Shi, M., Chussid, C., Yang, P., Jia, M., Van, D. L., & Cao, W. (2021). The exploration of artificial intelligence application in fashion trend forecasting. *Textile Research Journal, 91*(19-20), 2357-2386. [doi:10.1177/00405175211006212](https://doi.org/10.1177/00405175211006212).
 
-Stanford NLP Group. (n.d.). The Stanford NLP Group. The Stanford Natural Language Processing Group. Stanford NLP Group.
+Stanford NLP Group. (n.d.). The Stanford NLP Group. *The Stanford Natural Language Processing Group*. [Stanford NLP Group](https://nlp.stanford.edu/software/CRF-NER.shtml).
 
-Wolk, C. (2020, March 10). Strike a pose: Reclassifying Vogue’s runway coverage using latent Dirichlet allocation (LDA). Medium. Medium.
+Wolk, C. (2020, March 10). Strike a pose: Reclassifying Vogue’s runway coverage using latent Dirichlet allocation (LDA). *Medium*. [Medium](https://medium.com/@catherinemwolk/strike-a-pose-reclassifying-vogues-runway-coverage-using-latent-dirichlet-allocation-lda-d023a4681687).
 
-Zhao, L., Li, M., & Sun, P. (2024). Neo-fashion: A data-driven fashion trend forecasting system using catwalk analysis. Clothing and Textiles Research Journal, 42(1), 19-34. doi:10.1177/0887302X211004299.
+Zhao, L., Li, M., & Sun, P. (2024). Neo-fashion: A data-driven fashion trend forecasting system using catwalk analysis. *Clothing and Textiles Research Journal, 42*(1), 19-34. [doi:10.1177/0887302X211004299](https://doi.org/10.1177/0887302X211004299).
+
 
 ## Appendices
 This section includes additional information that may be useful to readers, such as detailed descriptions of the data sources, mathematical derivations, or additional statistical analyses.
