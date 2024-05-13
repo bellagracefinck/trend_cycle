@@ -88,7 +88,6 @@ In order to better understand which features of a collection contribute the most
 
 
 ## Results
-This section presents the findings of the research, including descriptive statistics, tables, and graphs. It should provide a clear and concise summary of the main results, highlighting any patterns or trends observed. [NOTE: 2-4 paragraphs]
 
 ### Exploratory Data Analysis
 The initial exploration of the data provided excellent context for the makeup data itself, as well as several aspects that validate our assumptions. 
@@ -146,6 +145,8 @@ As shown above, the validation accuracy hangs around the 0.7335 mark before decr
 #### NB
 The purpose of the Naive Bayes model in this context is aimed at a slightly different goal but trained on the same data. Rather than trying to predict designer status, the NB model is trained on the fashion-related words extracted by the NER model to try and identify specific collection attributes that contribute to or detract from the long term success of designers. 
 
+I additionally made the decision to remove the GARMENT_TYPE descriptors from the training set because I was less interested in the types of garments than the features, colors, and other characteristics that defined different collections and set them apart.
+
 We reach an accuracy score of 0.72 with this model, and identify which words contributed the most to the top designers vs. the normal designers. 
 
 ![Words NB](https://github.com/bellagracefinck/trend_cycle/blob/main/images/NBwords.png)
@@ -166,11 +167,13 @@ For curiosity's sake, I performed TF-IDF analysis on the collection descriptions
 ### Designer prevalence prediction
 I initially trained the RNN on the full collection descriptions and attempted to predict whether or not the designer of a collection was part of the top 5% of designers by prevalence score. The model took a long time to fit and often ended up being overfit to the training data regardless of how I tuned the hyperparameters. I  eventually decided to switch the training data to the extracted fashion-specific terms from each collection and was quite pleased with the results. The model was faster, minimized both training and validation loss, and ended with a balanced accuracy score between training and validation sets. 
 
+While the RNN is more complex, it has less interpretability than a simpler model like the Multinomial Naive Bayes model that I trained on the same training dataset. The NB model output includes coefficients that correspond to the words in the dataset and their respective probabilities. Because the coefficients are all calculated by taking the log of some value between 0 and 1 (the probability of class a given the word's presence in the dataset), all coefficients are negative. However they can be interpreted as such: the smaller the absolute value of the coefficient, the lower the likelihood; the larger the absolute value, the higher the likelihood. 
+
 
 ## Conclusion
 This section summarizes the main findings of the study, restates the research question, and discusses the implications of the research for future research and practice. [NOTE: 1-2 paragraphs]
 
-
+One of the primary ideas for future research I'd like to personally expand upon is the idea of training a large language model on the dataset and using it for text generation. I'd like to use an LLM to generate a prediction for what the next collections from top designers will contain. Ideally, this would provide an opportunity to see if the patterns I've recognized in my research lend themselves in any way into the forecasting of trends based on designer class. It would also allow me to experiment with AI-based trend forecasting. 
 
 ## References
 This section provides a list of all the sources cited in the paper, following a specific citation style (e.g., APA, MLA).
