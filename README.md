@@ -2,7 +2,6 @@
 ### Bella Grace Finck, DATA 340
 
 ## Abstract
-Abstract: This section provides a brief summary of the project, highlighting the main research question, methodology, results, and conclusions. It should be concise and clear, usually limited to 250-300 words.
 
 The field of fashion trend forecasting has existed for decades, but recent strides in natural language processing and AI have opened countless doors for opportunities to fortify the primarily qualitative work done by forecasting agencies and consumers alike. Through a thorough analysis of Vogue Runway's online archive of Ready-to-Wear collections from the past 34 years, this project aims to investigate one primary question: 
 
@@ -174,8 +173,6 @@ I was interested to see that the most significant informants of being a top desi
 
 
 ## Conclusion
-This section summarizes the main findings of the study, restates the research question, and discusses the implications of the research for future research and practice. [NOTE: 1-2 paragraphs]
-
 
 While my research was somewhat limited in scope by the non-exhaustiveness of my dataset and computational resources available on my laptop, I would be lying if I said I was not pleased with my findings. My network model was able to discover communities of similar collections over time and track the influence of certain collections on those that came after. Through the implementation of my Named Entity Recognition model and creation of NLP classifiers, I was able to discover that the most prevalent designers remain prevalent by refusing to date themselves through participation in flashy trends or attempting to deviate too far from the norm. 
 
