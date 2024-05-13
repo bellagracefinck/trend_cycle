@@ -90,15 +90,22 @@ In order to better understand which features of a collection contribute the most
 This section presents the findings of the research, including descriptive statistics, tables, and graphs. It should provide a clear and concise summary of the main results, highlighting any patterns or trends observed. [NOTE: 2-4 paragraphs]
 
 ### Exploratory Data Analysis
-The initial exploration of the data provided excellent context for the makeup data itself, as well as several aspects that validate our later experimentation. 
+The initial exploration of the data provided excellent context for the makeup data itself, as well as several aspects that validate our assumptions. 
 
 ![Figure 1](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-1.png)
+In figure 1, it becomes clear that the majority of our data is coming from the past 15 years. There is an additional dip in 2020 as a result of the COVID-19 pandemic slowing down in-person seasons, but the number of collections appears to be back on the incline post-pandemic. 
 
 ![Figure 2](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-2.png)
+In figure 2, we notice that there are many designers with very few collections and very few designers with many collections. This indicates to us that the distribution of number of collections follows the power law distribution, and would therefore be suitable for the modelling of a real world network. We can see in the top right plot that there are similarly very few designers who have been around for longer than the 2010s and many designers who first appeared in the archive in the mid to late 2010s. In the bottom half of the image, we compare consistency and prevalence scores. The biggest difference to note between the two is that the inclusion of the prevalence penalty term causes the scale to go from 0 to 1 to -1 to 1. 
 
 ![Figure 3](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-3.png)
+Figure 3 shows the distribution of review lengths, with a slight right skewed but a mostly bell-shaped curve. 
 
 ![Figure 4](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-4.png)
+Figure 4 is an example of the temporal nature of fashion trends. As tweed, a material more commonly associated with formal, often office-related attire, decreases in popularity, silk and lace, materials frequently associated with more romantic or delicate pieces, rise. This is just one example, but the code to recreate this plot with any words of your choosing is available in the EDA notebook. 
+
+###
+
 
 ## Discussion
 The discussion section interprets the results of the study in light of the research question and literature review. It should explain how the findings relate to previous research and provide a critical analysis of their implications. [NOTE: 6-10 paragraphs]
