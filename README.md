@@ -185,5 +185,8 @@ This section provides a list of all the sources cited in the paper, following a 
 ## Appendices
 This section includes additional information that may be useful to readers, such as detailed descriptions of the data sources, mathematical derivations, or additional statistical analyses.
 
+Here is a subset of the 'collections' dataframe, which contains the text data for each collection.
 
+
+Here is a subset of the 'designers' dataframe, which contains designer-specific values such as prevalence and consistency.
 
