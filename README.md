@@ -4,10 +4,9 @@
 ## Abstract
 Abstract: This section provides a brief summary of the project, highlighting the main research question, methodology, results, and conclusions. It should be concise and clear, usually limited to 250-300 words.
 
-The field of fashion trend forecasting has existed for decades, but recent strides in natural language processing and AI have opened countless doors for opportunities to fortify the primarily qualitative work done by forecasting agencies and consumers alike. Through a thorough analysis of Vogue Runway's archive of Ready-to-Wear collections from the past 34 years, this project aims to answer one question: 
+The field of fashion trend forecasting has existed for decades, but recent strides in natural language processing and AI have opened countless doors for opportunities to fortify the primarily qualitative work done by forecasting agencies and consumers alike. Through a thorough analysis of Vogue Runway's archive of Ready-to-Wear collections from the past 34 years, this project aims to investigate one primary question: 
 
->How successful are natural language processing efforts at recognizing the trend cycle in action, identifying the characteristics of fashion designers who achieve long-term success, and using the two to predict trends and deisgner longevity alike?
-
+**How successful are natural language processing efforts at recognizing the trend cycle in action, identifying the characteristics of fashion designers who achieve long-term success, and using the two to predict trends and deisgner longevity alike?**
 
 
 ## Introduction
@@ -152,7 +151,6 @@ We reach an accuracy score of 0.72 with this model, and identify which words con
 
 
 ## Discussion
-The discussion section interprets the results of the study in light of the research question and literature review. It should explain how the findings relate to previous research and provide a critical analysis of their implications. [NOTE: 6-10 paragraphs]
 
 ### NER 
 In the stacked bar chart, there are several visible trends in the makeup of descriptions. Describing collections by their "style," or the niche of fashion that they either fall into or take inspiration from was quite popular in the 1990s but fell out of favor in the early 2000s. We start to see an increase in popularity around 2020, possibly as a result of the internet's influence on fashion. With the rise in trend-related companies such as Pinterest which rely on computer vision techniques in order to improve their recommendation systems, more and more images are being categorized and labelled. With the introduction of these categories, however, though they are not always visible to the consumer, people begin to take note of which keywords produce the output they want the most and create mental links between the output (say, a white lace dress) and the categorical search terms ('romantic'). This kind of "aesthetic" culture has become greater than just style-defining - individuals recognize these niches as not just a formula for what to wear, but an identity. As a result, it comes as no surprise that collection descriptions are beginning to include more style categorizations, as brands seek to capitalize on mankind's innate need to self-categorization.
@@ -165,7 +163,7 @@ After adding node attributes to the network based on designer name, season-year,
 For curiosity's sake, I performed TF-IDF analysis on the collection descriptions of  four sample communities identified by the greedy modularity community detection algorithm. While not entirely different, there are certain elements of each community that seem to characterize the vibe of collections included in the community itself. For example, in Sample 3, the inclusion of simple, lightweight fabrics such as gauze and linen fall in line with the general style of minimalism and sustainability. Comparatively, Sample 2's mentions of country, western, and lace seem to evoke a similar sense of cohesion. Were this a clothing classification dataset, the juxtaposition of country and punk in this output may have sparked more cause for concern, but given the extremely imaginative nature of designer fashion, it is likely that the terms are closer in nature than we would otherwise assume. 
 
 ### Designer prevalence prediction
-
+The Recurrent Neural Network 
 
 
 ## Conclusion
