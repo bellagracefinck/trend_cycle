@@ -117,6 +117,10 @@ Each column is made up of the words with the top ten highest normalized tf-idf s
 ### Classifying collection seasons with Naive Bayes and Support Vector Classifier models
 In order to check on the usefulness of the data, I created two supervised learning models to predict the season of different designer collections based on the processed descriptions. The Naive Bayes model was able to achieve a validation accuracy of 0.8311 while the SVC model achieved a validation accuracy of 0.8727. Given the content of the dataset itself, the fact that models were successfully labelling seasons at these accuracy rates is not exactly surprising, but it was helpful for me to validate the usability of the data in a machine learning context.
 
+### Named Entity Recognition
+After extracting the fashion entities from each collection description, I decided to plot the proportion of word types over time to see if there were any trends in the way people wrote about fashion. 
+![NER](https://github.com/bellagracefinck/trend_cycle/blob/main/images/label_prop.png)
+
 ### Applied K-means clustering & network generation
 
 ![Frequency matrix](https://github.com/bellagracefinck/trend_cycle/blob/main/images/freq.png)
@@ -130,11 +134,12 @@ After visualizing the network in Gephi, we can see there are clear groups of des
 #### RNN
 We fit an RNN model to the data to predict whether the collection designer is part of the top 95th percentile of designers in terms of prevalence (y = 1 if designer prevalence in 95th-100th percentile, y = 0 otherwise). The (already pre-processed) text is vectorized, embedded, and turned into a TensorFlow dataset. The data is then batched and run through the model (a combination of Dense, LTSM, and Dropout layers). We utilize activation functions that work well with binary classification, like 'sigmoid.'
 
-As shown below, the validation accuracy hangs around the 0.7335 mark before decreasing slightly, while the training accuracy increases over time. Though the model becomes more overfit with each epoch, the validation accuracy does not decrease, which is a positive. 
+![RNN History](https://github.com/bellagracefinck/trend_cycle/blob/main/images/rnn_history.png)
 
+As shown above, the validation accuracy hangs around the 0.7335 mark before decreasing slightly, while the training accuracy increases over time. Though the model becomes more overfit with each epoch, the validation accuracy does not decrease, which is a positive. 
 
 #### NB
-The Naive Bayes model in this context is aimed at a slightly different goal. Rather than trying to predict designer status with the entire description of the collection, the NB model uses exclusively the fashion-related words extracted by the NER model to try and identify specific collection attributes that contribute to or detract from the long term success of designers. 
+The Naive Bayes model in this context is aimed at a slightly different goal. Rather than trying to predict designer status with the entire description of the collection, the NB model is trained exclusively on the fashion-related words extracted by the NER model to try and identify specific collection attributes that contribute to or detract from the long term success of designers. 
 
 We reach an accuracy score of 0.72 with this model, and identify which words contributed the most to the top designers vs. the normal designers. 
 
@@ -144,10 +149,12 @@ We reach an accuracy score of 0.72 with this model, and identify which words con
 ## Discussion
 The discussion section interprets the results of the study in light of the research question and literature review. It should explain how the findings relate to previous research and provide a critical analysis of their implications. [NOTE: 6-10 paragraphs]
 
+### NER 
+In the stacked bar chart, there is a visible trend in the 
 
 
 ### Trend cycle network
-In the network analysis portion of the study, the K-means output produced a relatively sparse frequency matrix. For our purposes, this was a good thing, as our goal was to uncover groups of commonly clustered collections. However, including the manual filtering of a 50% threshold helped to improve signal in community detection and further separate preexisting clusters from proportionally less relevant/connected nodes. 
+In the network analysis portion of the study, the K-means output produced a relatively sparse frequency matrix. For our purposes, this was a good thing, as our goal was to uncover groups of commonly clustered collections. However, including the manual filtering of a 50% threshold (edge weight > 25) helped to improve signal in community detection and further separate preexisting clusters from proportionally less relevant/connected nodes. 
 
 After adding node attributes to the network based on designer name, season-year, and class, we are able to analyze the data further in Gephi. 
 
