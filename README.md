@@ -192,6 +192,8 @@ Shi, M., Chussid, C., Yang, P., Jia, M., Van, D. L., & Cao, W. (2021). The explo
 
 Stanford NLP Group. (n.d.). The Stanford NLP Group. *The Stanford Natural Language Processing Group*. [Stanford NLP Group](https://nlp.stanford.edu/software/CRF-NER.shtml).
 
+Vogue. (n.d.). Fashion shows. *Vogue*. Retrieved from [https://www.vogue.com/fashion-shows](https://www.vogue.com/fashion-shows).
+
 Wolk, C. (2020, March 10). Strike a pose: Reclassifying Vogue’s runway coverage using latent Dirichlet allocation (LDA). *Medium*. [Medium](https://medium.com/@catherinemwolk/strike-a-pose-reclassifying-vogues-runway-coverage-using-latent-dirichlet-allocation-lda-d023a4681687).
 
 Zhao, L., Li, M., & Sun, P. (2024). Neo-fashion: A data-driven fashion trend forecasting system using catwalk analysis. *Clothing and Textiles Research Journal, 42*(1), 19-34. [doi:10.1177/0887302X211004299](https://doi.org/10.1177/0887302X211004299).
