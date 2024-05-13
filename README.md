@@ -1,8 +1,13 @@
-## The Devil Wears Prada, I Wear Whatever's on Sale: An NLP Application in Fashion Trend Forecasting and Brand Longevity Analysis
+## The Devil Wears Prada, I Wear Whatever's on Sale: NLP Applications in Fashion Trend Forecasting and Brand Longevity Analysis
 ### Bella Grace Finck, DATA 340
 
 ## Abstract
 Abstract: This section provides a brief summary of the project, highlighting the main research question, methodology, results, and conclusions. It should be concise and clear, usually limited to 250-300 words.
+
+The field of fashion trend forecasting has existed for decades, but recent strides in natural language processing and AI have opened countless doors for opportunities to fortify the primarily qualitative work done by forecasting agencies and consumers alike. Through a thorough analysis of Vogue Runway's archive of Ready-to-Wear collections from the past 34 years, this project aims to answer one question: 
+
+>How successful are natural language processing efforts at recognizing the trend cycle in action, identifying the characteristics of fashion designers who achieve long-term success, and using the two to predicting trends and deisgner longevity alike?
+
 
 
 ## Introduction
@@ -28,10 +33,16 @@ This section provides a comprehensive review of the relevant literature on the t
 This section explains the research design, including the data sources, data collection methods, and analysis techniques used. It also discusses any assumptions made and the rationale behind the chosen methods. [NOTE: 2-4 paragraphs]
 
 #### Data collection
-Data was scraped from the Vogue Runway archive using BeautifulSoup (see data_generation notebook). 
-Although it originated as a print-only publication, Vogue has gradually shifted to include their articles and images in a digital format on their website. They have also begun to digitize collections from before the establishment of their digital presence, dating back to Fall 1988. My dataset is made up of every ready-to-wear collection in the archive since Spring 1990 and through Fall 2023. I have saved the raw article text for each of these collections along with the respective season, year, and designer in my complete.csv file.  
+Data was scraped from the Vogue Runway archive using BeautifulSoup (see data_generation notebook). Although it originated as a print-only publication, Vogue has gradually shifted to include their articles and images in a digital format on their website. They have also begun to digitize collections from before the establishment of their digital presence, dating back to Fall 1988. My dataset is made up of every ready-to-wear collection in the archive since Spring 1990 and through Fall 2023. I have saved the raw article text for each of these collections along with the respective season, year, and designer in my complete.csv file.  
 
-It is important to note that while this dataset is large, it is not exhaustive and will remain incomplete until Vogue uploads their entire archive. The data is particularly sparse for the older seasons, but increases in robustness as the years progress. 
+It is important to note that while this dataset is large, it is not exhaustive - particularly in the earlier seasons - due to the fact that Vogue is currently expanding the Vogue Runway archive by digitizing collections originally shot on film and reviews originally written for print.   
+
+Given the aims of my project, I opted to use Ready to Wear collections rather than Couture. This was based on the assumption that RTW collections are truer to the products that designers are actually selling to a consumer base, therefore they are the collections that will influence the trend cycle the most. While all designer clothing is an art form, there tends to be more repetition and influence in RTW collections than in couture collections, in which there is very little practicality required of the clothing itself. 
+
+#### Data format
+Collection descriptions are located in the *collections* dataframe, which consists of the columns 'season', 'year', 'seasonyear', 'designer', 'text', 'id', and 'preprocessed_sentences' and is eventually mapped to include 'consistency', 'prevalence', and 'class'.
+
+Designer-specific information is contained in the *designers* dataframe, which consists of 'designer', 'collections' (total number of designer's collections), and 'first_season', 'consistency', 'prevalence', and 'class'. 
 
 #### Metric calculations
 Designers are quantified by two metrics: *consistency* and *prevalence*.  
@@ -47,22 +58,53 @@ Designers are quantified by two metrics: *consistency* and *prevalence*.
 
 In my final analysis, I used the third form of $α$, $α = \frac{1}{\sqrt{collections}}$, as it penalized the brand new designers with high consistency values without limiting high prevalence values to exclusively the oldest, most established designers. 
 
-The metric is then calculated as $prevalence = consistency - \frac{1}{\sqrt{collections}}$.
+The prevalence metric is then calculated as $prevalence = consistency - \frac{1}{\sqrt{collections}}$.
+
+The *class* variable is a class assignment by percentile of prevalence score. Classes range from 0 to 5 and the 0-20, 20-40th, 40-60th, 60-80th, 80-90th, and 90-100th percentiles, respectively. 
+
+#### Analysis techniques
+**Trend cycle analysis**
+In order to investigate the first portion of the research question - recognizing the trend cycle in real time - I decided to implement some principles of network analysis as well as traditional clustering algorithms in order to identify similar collections within the dataset. In order to extract the summarizing features of the collections, I created a custom Named Entity Recognition model that was trained specifically on fashion-related entities. 
+
+The NER model searched for five different entity types:
+- COLOR: colors, ranging in specificity from 'red' to 'russet'
+- MATERIAL: fabric types, such as 'organza', 'tulle', or 'cotton'
+- GARMENT_TYPE: different types of clothing, such as 'shirt', 'parka', or 'camisole'
+- FEATURE: item features/descriptors, including different cuts ('sleeveless, 'tailored', 'mermaid'), textures ('padded', 'shiny'), and other miscellaneous characteristics
+- STYLE: names for generally-recognized categories of styles ('preppy', 'boho', 'steampunk')
+
+After extracting the fashion-related terms from each of the collection descriptions, I vectorized the output lists of terms using a TFIDF vectorizer. I then took a random sample of 35% of the data (5,000 collections) and ran the sample through a K-means clustering algorithm 50 times, with 50 different random_state values each time for reproducibility. Running the algorithm with the full dataset was very, very slow, so using a smaller subset of the data was necessary for proof of concept. 
+
+I stored the cluster label output for each run, then turned the output into a frequency matrix in which the id numbers of each collection made up both the index and the columns and the values in each cell $x_i,j$ is the number of times out of the 50 runs that the two collections i and j were in the same cluster. This frequency matrix is available for experimentation in the repo under the name freq_5000.csv.
+
+This frequency matrix is then converted into a network adjacency matrix, in which the values in each cell become the weight of the link between the two collection nodes. With a manual threshold in place, collections only form a link if they were in the same cluster more than 30% of the time in order to limit noise. We then apply a Louvain community detection algorithm to the network to identify groups of similar collections. These group assignments become the primary informant to evaluating which collections are the most similar. 
+
+**Brand longevity analysis**
+As for the evaluation of brand longevity, I created a Recurrent Neural Network to predict the prevalence score of designers based on their collection descriptions. As the prevalence score is a continuous target variable, the RNN required linear loss functions and 
 
 
 ## Results
 This section presents the findings of the research, including descriptive statistics, tables, and graphs. It should provide a clear and concise summary of the main results, highlighting any patterns or trends observed. [NOTE: 2-4 paragraphs]
 
+
+
+
+
 ## Discussion
 The discussion section interprets the results of the study in light of the research question and literature review. It should explain how the findings relate to previous research and provide a critical analysis of their implications. [NOTE: 6-10 paragraphs]
 
+
+
 ## Conclusion
 This section summarizes the main findings of the study, restates the research question, and discusses the implications of the research for future research and practice. [NOTE: 1-2 paragraphs]
+
+
 
 ## References
 This section provides a list of all the sources cited in the paper, following a specific citation style (e.g., APA, MLA).
 
 ## Appendices
 This section includes additional information that may be useful to readers, such as detailed descriptions of the data sources, mathematical derivations, or additional statistical analyses.
+
 
 
