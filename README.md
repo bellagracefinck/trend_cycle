@@ -186,7 +186,10 @@ This section provides a list of all the sources cited in the paper, following a 
 This section includes additional information that may be useful to readers, such as detailed descriptions of the data sources, mathematical derivations, or additional statistical analyses.
 
 Here is a subset of the 'collections' dataframe, which contains the text data for each collection.
+![collections df](https://github.com/bellagracefinck/trend_cycle/blob/main/images/collections.png)
 
+Here is a subset of the 'designers' dataframe, which contains designer-specific values such as their first season and total number of collections as well as calculated metrics like prevalence and consistency.
+![designers df](https://github.com/bellagracefinck/trend_cycle/blob/main/images/designers.png)
 
-Here is a subset of the 'designers' dataframe, which contains designer-specific values such as prevalence and consistency.
-
+Here are summary statistics for the 'designers' dataframe. 
+![designers sum](https://github.com/bellagracefinck/trend_cycle/blob/main/images/sumstat_des.png)
