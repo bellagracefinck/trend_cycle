@@ -1,6 +1,5 @@
-## Natural Language Processing Final
-This is a test of my markdown file abilities. 
-
+## The Trickle-down of Trends: An NLP Application in Fashion Trend Forecasting
+### Bella Grace Finck, DATA 340
 
 ## Abstract
 Abstract: This section provides a brief summary of the project, highlighting the main research question, methodology, results, and conclusions. It should be concise and clear, usually limited to 250-300 words.
@@ -13,10 +12,9 @@ One of my favorite movie monologues of all time is by Meryl Streep (as fictional
         
 Even as I read the words for the hundredth time, I can feel the prickling sensation I got the first time I ever watched the film. In a world in which the illusion of choice is everywhere, fashion is often advertised as an escape - an opportunity for one to make choices based exclusively on their own intended self-expression. However, just like most things in our society, the vast majority of decisions we make have already been made for us by a group of highly influential elites. 
 
-I have always been interested in fashion trend forecasting and occasionally attempt to qualitatively analyze things myself, but this project is by far my most ambitious endeavor yet. As I began to research current methodologies in trend forecasting agencies, I discovered that most projects are aimed at evaluating the lifetimes of trends rather than evaluating the characteristics that enable the most successful members of the fashion industry to maintain their success and influence. This makes sense in the context of our efficiency and profit-driven world, but my instincts tell me that trend forecasting as a field would benefit from the greater contextualization of analyzing brand longevity. 
+I have always been interested in fashion trend forecasting and occasionally attempt to qualitatively analyze things myself, but this project is by far my most ambitious endeavor into the world of trend forecasting yet. As I began to research current methodologies in trend forecasting agencies, I discovered that most projects are aimed at evaluating the lifetimes of trends rather than evaluating the characteristics that enable the most successful members of the fashion industry to maintain their success and influence. This makes sense in the context of our efficiency and profit-driven world, but my instincts tell me that trend forecasting as a field would benefit from the greater contextualization of analyzing brand longevity. 
 
 I hope that by discovering similarities between different designer collections and overall seasons I will be able to identify and anticipate potential upcoming trends and that by analyzing designer prevalence over time I will be able to predict the future success of specific designers. 
-
 
 
 ## Literature review: 
