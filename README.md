@@ -142,7 +142,7 @@ The purpose of the Naive Bayes model in this context is aimed at a slightly diff
 
 I additionally made the decision to remove the GARMENT_TYPE descriptors from the training set because I was less interested in the types of garments than the features, colors, and other characteristics that defined different collections and set them apart.
 
-We reach an accuracy score of 0.72 with this model, and identify which words contributed the most to the top designers vs. the normal designers. 
+This model achieves an accuracy score of 0.72 and provides context as to which words contributed the most to identifying the top designers vs. the normal designers. 
 
 ![Words NB](https://github.com/bellagracefinck/trend_cycle/blob/main/images/NBwords.png)
 
