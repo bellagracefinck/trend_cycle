@@ -61,8 +61,8 @@ The prevalence metric is then calculated as $prevalence = consistency - \frac{1}
 
 The *class* variable is a class assignment by percentile of prevalence score. Classes range from 0 to 5 and the 0-20, 20-40th, 40-60th, 60-80th, 80-90th, and 90-100th percentiles, respectively. 
 
-#### Analysis techniques
-**Trend cycle analysis**
+### Analysis techniques
+#### Trend cycle analysis
 In order to investigate the first portion of the research question - recognizing the trend cycle in real time - I decided to implement some principles of network analysis as well as traditional clustering algorithms in order to identify similar collections within the dataset. In order to extract the summarizing features of the collections, I created a custom Named Entity Recognition model that was trained specifically on fashion-related entities. 
 
 The NER model searched for five different entity types:
@@ -78,7 +78,7 @@ I stored the cluster label output for each run, then turned the output into a fr
 
 This frequency matrix is then converted into a network adjacency matrix, in which the values in each cell become the weight of the link between the two collection nodes. With a manual threshold in place, collections only form a link if they were in the same cluster more than 30% of the time in order to limit noise. We then apply a Louvain community detection algorithm to the network to identify groups of similar collections. These group assignments become the primary informant to evaluating which collections are the most similar. 
 
-**Brand longevity analysis**
+#### Brand longevity analysis
 As for the evaluation of brand longevity, I created a Recurrent Neural Network to predict the prevalence score of designers based on their collection descriptions. As the raw prevalence score is a continuous target variable, I utilized the class assignments (based on percentiles) to allow for classification. However, rather than using the class assignments themselves, I opted to turn the problem into a binary classification (1 for high (95th percentile or above) prevalence, 0 for low prevalence). This was due in part to the fact that the prevalence score is not normally distributed, so there are significantly more observations associated with certain levels of prevalence than with others, so even though the classes are based on percentiles the percentiles have very limited differences. 
 
 Were I to have more time or data, I'd be interested in doing a regression on designer metadata in order to predict prevalence. 
@@ -89,7 +89,7 @@ In order to better understand which features of a collection contribute the most
 ## Results
 This section presents the findings of the research, including descriptive statistics, tables, and graphs. It should provide a clear and concise summary of the main results, highlighting any patterns or trends observed. [NOTE: 2-4 paragraphs]
 
-#### Exploratory Data Analysis
+### Exploratory Data Analysis
 
 
 
