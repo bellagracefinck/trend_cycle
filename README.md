@@ -1,4 +1,4 @@
-## The Trickle-down of Trends: An NLP Application in Fashion Trend Forecasting
+## The Devil wears Prada, I wear whatever is trendy: \n An NLP Application in Fashion Trend Forecasting and Brand Longevity Analysis
 ### Bella Grace Finck, DATA 340
 
 ## Abstract
