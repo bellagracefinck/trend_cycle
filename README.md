@@ -184,7 +184,7 @@ Chapter 3: Processing Pipelines. (n.d.). *Advanced NLP with spaCy*. [Advanced NL
 
 Emerson, S. (2022). Gen z’s imitations of life: Aesthetics, self and Pinterest. *University Wire*. [University Wire](https://www.proquest.com/wire-feeds/gen-z-s-imitations-life-aesthetics-self-pinterest/docview/2623033840/se-2?accountid=15053).
 
-Frankel, D. (2006). The Devil Wears Prada. Fox 2000 Pictures.
+Frankel, D. (2006). *The Devil Wears Prada*. Fox 2000 Pictures.
 
 Masse, D. (n.d.). Davidmasse/blog-fashion-system: NLP analysis of fashion trends. GitHub. [GitHub](https://github.com/davidmasse/blog-fashion-system/tree/master).
 
