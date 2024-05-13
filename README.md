@@ -92,17 +92,25 @@ This section presents the findings of the research, including descriptive statis
 ### Exploratory Data Analysis
 The initial exploration of the data provided excellent context for the makeup data itself, as well as several aspects that validate our assumptions. 
 
+![Wordcloud](https://github.com/bellagracefinck/trend_cycle/blob/main/images/wc.png)
+Albeit not the most effective visualization, word clouds help communicate the "main idea" of a dataset and demystify the type of language we are seeing in the archival reviews. Despite the NLP jargon present in this report, the vocabulary of the dataset is not particularly complex or advanced, which is helpful when lemmatizing words.  
+
 ![Figure 1](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-1.png)
 In figure 1, it becomes clear that the majority of our data is coming from the past 15 years. There is an additional dip in 2020 as a result of the COVID-19 pandemic slowing down in-person seasons, but the number of collections appears to be back on the incline post-pandemic. 
 
 ![Figure 2](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-2.png)
-In figure 2, we notice that there are many designers with very few collections and very few designers with many collections. This indicates to us that the distribution of number of collections follows the power law distribution, and would therefore be suitable for the modelling of a real world network. We can see in the top right plot that there are similarly very few designers who have been around for longer than the 2010s and many designers who first appeared in the archive in the mid to late 2010s. In the bottom half of the image, we compare consistency and prevalence scores. The biggest difference to note between the two is that the inclusion of the prevalence penalty term causes the scale to go from 0 to 1 to -1 to 1. 
+In the top left plot, we notice that there are many designers with very few collections and very few designers with many collections. This indicates to us that the distribution of number of collections follows the power law distribution, and would therefore be suitable for the modelling of a real world network. We can see in the top right plot that there are similarly very few designers who have been around for longer than before the 2010s and many designers who first appeared in the archive in the mid to late 2010s.
+
+In the bottom half of the figure, we compare consistency and prevalence scores. The biggest difference to note between the two is that the inclusion of the prevalence penalty term causes the scale of scores to go from 0 to 1 to -1 to 1. In comparison to the consistency plot, the prevalence scores are more evenly spread out despire there still being a higher number of designers at either end of the spectrum (around -1 to around 1).
 
 ![Figure 3](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-3.png)
 Figure 3 shows the distribution of review lengths, with a slight right skewed but a mostly bell-shaped curve. 
 
 ![Figure 4](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-4.png)
 Figure 4 is an example of the temporal nature of fashion trends. As tweed, a material more commonly associated with formal, often office-related attire, decreases in popularity, silk and lace, materials frequently associated with more romantic or delicate pieces, rise. This is just one example, but the code to recreate this plot with any words of your choosing is available in the EDA notebook. 
+
+### Classifying collection seasons with Naive Bayes and Support Vector Classifier models
+In order to check on the usefulness of the data, I created two supervised learning models to predict the season of different designer collections based on the processed descriptions. The Naive Bayes model was able to achieve a validation accuracy of 0.8311 while the SVC model achieved a validation accuracy of 0.8727. Given the content of the dataset itself, the fact that models were successfully labelling seasons at these accuracy rates is not exactly surprising, but it was helpful for me to validate the usability of the data in a machine learning context.
 
 ###
 
