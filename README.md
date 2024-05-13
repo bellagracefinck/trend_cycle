@@ -55,7 +55,8 @@ Designers are quantified by two metrics: *consistency* and *prevalence*.
         4. $α = \frac{1}{\sqrt[3]{collections}}$
     - This helps to ensure that designers who have only been in the most recent season (consistency = 1) are not weighted equally with designers who have high consistency values after having been around for many years
 
-In my final analysis, I used the third form of $α$, $α = \frac{1}{\sqrt{collections}}$, as it penalized the brand new designers with high consistency values without limiting high prevalence values to exclusively the oldest, most established designers. 
+![Penalties](https://github.com/bellagracefinck/trend_cycle/blob/main/images/penalty.png)
+In these plots, you can see the impact of the different penalty terms. In my final analysis, I used the third form of $α$, $α = \frac{1}{\sqrt{collections}}$, as it penalized the brand new designers with high consistency values without limiting high prevalence values to exclusively the oldest, most established designers. 
 
 The prevalence metric is then calculated as $prevalence = consistency - \frac{1}{\sqrt{collections}}$.
 
@@ -108,6 +109,7 @@ Figure 3 shows the distribution of review lengths, with a slight right skewed bu
 
 ![Figure 4](https://github.com/bellagracefinck/trend_cycle/blob/main/images/fig-4.png)
 Figure 4 is an example of the temporal nature of fashion trends. As tweed, a material more commonly associated with formal, often office-related attire, decreases in popularity, silk and lace, materials frequently associated with more romantic or delicate pieces, rise. This is just one example, but the code to recreate this plot with any words of your choosing is available in the EDA notebook. 
+
 
 ### Classifying collection seasons with Naive Bayes and Support Vector Classifier models
 In order to check on the usefulness of the data, I created two supervised learning models to predict the season of different designer collections based on the processed descriptions. The Naive Bayes model was able to achieve a validation accuracy of 0.8311 while the SVC model achieved a validation accuracy of 0.8727. Given the content of the dataset itself, the fact that models were successfully labelling seasons at these accuracy rates is not exactly surprising, but it was helpful for me to validate the usability of the data in a machine learning context.
