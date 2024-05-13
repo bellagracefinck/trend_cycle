@@ -60,7 +60,7 @@ In these plots, you can see the impact of the different penalty terms. In my fin
 
 The prevalence metric is then calculated as $prevalence = consistency - \frac{1}{\sqrt{collections}}$.
 
-The *class* variable is a class assignment by percentile of prevalence score. Classes range from 0 to 5 and the 0-20, 20-40th, 40-60th, 60-80th, 80-90th, and 90-100th percentiles, respectively. 
+The *class* variable is a class assignment by percentile of prevalence score. Classes range from 0 to 5 and the 0-20, 20-40th, 40-60th, 60-80th, 80-90th, and 90-94th, anf 95-100th percentiles, respectively. 
 
 ### Analysis techniques
 #### Trend cycle analysis
@@ -77,7 +77,7 @@ After extracting the fashion-related terms from each of the collection descripti
 
 I stored the cluster label output for each run, then turned the output into a frequency matrix in which the id numbers of each collection made up both the index and the columns and the values in each cell $x_i,j$ is the number of times out of the 50 runs that the two collections i and j were in the same cluster. This frequency matrix is available for experimentation in the repo under the name freq_5000.csv.
 
-This frequency matrix is then converted into a network adjacency matrix, in which the values in each cell become the weight of the link between the two collection nodes. With a manual threshold in place, collections only form a link if they were in the same cluster more than 30% of the time in order to limit noise. We then apply a Louvain community detection algorithm to the network to identify groups of similar collections. These group assignments become the primary informant to evaluating which collections are the most similar. 
+This frequency matrix is then converted into a network adjacency matrix, in which the values in each cell become the weight of the link between the two collection nodes. With a manual threshold in place, collections only form a link if they were in the same cluster more than 50% of the time in order to limit noise. We then apply a Greedy Modularity Optimizer community detection algorithm to the network to identify groups of similar collections. These group assignments become the primary informant to evaluating which collections are the most similar. 
 
 #### Brand longevity analysis
 As for the evaluation of brand longevity, I created a Recurrent Neural Network to predict the prevalence score of designers based on their collection descriptions. As the raw prevalence score is a continuous target variable, I utilized the class assignments (based on percentiles) to allow for classification. However, rather than using the class assignments themselves, I opted to turn the problem into a binary classification (1 for high (95th percentile or above) prevalence, 0 for low prevalence). This was due in part to the fact that the prevalence score is not normally distributed, so there are significantly more observations associated with certain levels of prevalence than with others, so even though the classes are based on percentiles the percentiles have very limited differences. 
@@ -119,13 +119,40 @@ In order to check on the usefulness of the data, I created two supervised learni
 
 ### Applied K-means clustering & network generation
 
+![Frequency matrix](https://github.com/bellagracefinck/trend_cycle/blob/main/images/freq.png)
+Here is the frequency/adjacency matrix used to create the network graph. The index and column titles are the id numbers of the collections, which later become the names of the nodes. The value in each cell represents the number of times the nodes at the index and column title were in the same cluster (ex: collections 7120 and 3821 were clustered together 30 times out of 50 runs).
+
+![Network](https://github.com/bellagracefinck/trend_cycle/blob/main/images/graph.png)
+After visualizing the network in Gephi, we can see there are clear groups of designer collections that were clustered together frequently across the runs. 
 
 ### Prediction of designer status with Recurrent Neural Network and Naive Bayes models
 
+#### RNN
+We fit an RNN model to the data to predict whether the collection designer is part of the top 95th percentile of designers in terms of prevalence (y = 1 if designer prevalence in 95th-100th percentile, y = 0 otherwise). The (already pre-processed) text is vectorized, embedded, and turned into a TensorFlow dataset. The data is then batched and run through the model (a combination of Dense, LTSM, and Dropout layers). We utilize activation functions that work well with binary classification, like 'sigmoid.'
+
+As shown below, the validation accuracy hangs around the 0.7335 mark before decreasing slightly, while the training accuracy increases over time. Though the model becomes more overfit with each epoch, the validation accuracy does not decrease, which is a positive. 
+
+
+#### NB
+The Naive Bayes model in this context is aimed at a slightly different goal. Rather than trying to predict designer status with the entire description of the collection, the NB model uses exclusively the fashion-related words extracted by the NER model to try and identify specific collection attributes that contribute to or detract from the long term success of designers. 
+
+We reach an accuracy score of 0.72 with this model, and identify which words contributed the most to the top designers vs. the normal designers. 
+
+![Words NB](https://github.com/bellagracefinck/trend_cycle/blob/main/images/NBwords.png)
 
 
 ## Discussion
 The discussion section interprets the results of the study in light of the research question and literature review. It should explain how the findings relate to previous research and provide a critical analysis of their implications. [NOTE: 6-10 paragraphs]
+
+
+
+### Trend cycle network
+In the network analysis portion of the study, the K-means output produced a relatively sparse frequency matrix. For our purposes, this was a good thing, as our goal was to uncover groups of commonly clustered collections. However, including the manual filtering of a 50% threshold helped to improve signal in community detection and further separate preexisting clusters from proportionally less relevant/connected nodes. 
+
+After adding node attributes to the network based on designer name, season-year, and class, we are able to analyze the data further in Gephi. 
+
+
+### Designer prevalence prediction
 
 
 
