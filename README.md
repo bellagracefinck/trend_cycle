@@ -192,4 +192,4 @@ Here is a subset of the 'designers' dataframe, which contains designer-specific 
 ![designers df](https://github.com/bellagracefinck/trend_cycle/blob/main/images/designers.png)
 
 Here are summary statistics for the 'designers' dataframe. 
-![designers sum](https://github.com/bellagracefinck/trend_cycle/blob/main/images/sumstat_des.png)
+![designers sum](https://github.com/bellagracefinck/trend_cycle/blob/main/images/sumstat_designers.png)
